@@ -1,0 +1,226 @@
+{
+    "query1": {
+        "WHERE": {
+            "IS": {
+                "courses_dept": "cpsc"
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_id"
+            ],
+            "ORDER": {
+                "dir": "UP",
+                "keys": [
+                    "courses_id"
+                ]
+            }
+        }
+    },
+    "GT99andNOTEQ99.19": {
+        "WHERE": {
+            "AND": [
+                {
+                    "GT": {
+                        "courses_avg": 99
+                    }
+                },
+                {
+                    "NOT": {
+                        "EQ": {
+                            "courses_avg": 99.19
+                        }
+                    }
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_avg",
+                "courses_dept",
+                "courses_id"
+            ],
+            "ORDER": {
+                "dir": "UP",
+                "keys": [
+                    "courses_id"
+                ]
+            }
+        }
+    },
+    "dylanQuery": {
+        "WHERE": {
+            "GT": {
+                "courses_avg": 97
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_id",
+                "apply1",
+                "apply2"
+            ],
+            "ORDER": {
+                "dir": "UP",
+                "keys": [
+                    "courses_dept",
+                    "courses_id"
+                ]
+            }
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+                "courses_dept",
+                "courses_id"
+            ],
+            "APPLY": [
+                {
+                    "apply1": {
+                        "AVG": "courses_pass"
+                    }
+                },
+                {
+                    "apply2": {
+                        "AVG": "courses_avg"
+                    }
+                }
+            ]
+        }
+    },
+    "rebeccaqueryD3": {
+        "WHERE": {
+            "AND": [
+                {
+                    "IS": {
+                        "courses_dept": "comm"
+                    }
+                },
+                {
+                    "LT": {
+                        "courses_avg": 50
+                    }
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_id",
+                "courses_title",
+                "courses_avg",
+                "overallAvg"
+            ]
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+                "courses_dept",
+                "courses_id",
+                "courses_title",
+                "courses_avg"
+            ],
+            "APPLY": [
+                {
+                    "overallAvg": {
+                        "AVG": "courses_avg"
+                    }
+                }
+            ]
+        }
+    },
+    "r29_vulcan": {
+        "WHERE": {
+            "AND": [
+                {
+                    "IS": {
+                        "rooms_shortname": "BUCH"
+                    }
+                },
+                {
+                    "GT": {
+                        "rooms_seats": 70
+                    }
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "rooms_shortname",
+                "rooms_number",
+                "rooms_seats",
+                "rooms_type"
+            ],
+            "ORDER": {
+                "dir": "DOWN",
+                "keys": [
+                    "rooms_seats",
+                    "rooms_number"
+                ]
+            }
+        }
+    },
+    "R25_Beeboron": {
+        "WHERE": {
+            "AND": [
+                {
+                    "GT": {
+                        "courses_avg": 99
+                    }
+                },
+                {
+                    "IS": {
+                        "courses_dept": "math"
+                    }
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_avg",
+                "courses_dept"
+            ]
+        }
+    },
+    "R25_Beeboron2": {
+        "WHERE": {
+            "AND": [
+                {
+                    "GT": {
+                        "courses_avg": 90
+                    }
+                },
+                {
+                    "IS": {
+                        "courses_dept": "math"
+                    }
+                },
+                {
+                    "IS": {
+                        "courses_title": "intr mod diff ge"
+                    }
+                },
+                {
+                    "NOT": {
+                        "EQ": {
+                            "courses_pass": 3
+                        }
+                    }
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_avg",
+                "courses_dept",
+                "courses_pass",
+                "courses_title"
+            ]
+        }
+    },
+    "R25_Beeboron3":    {"WHERE":{"NOT":{"OR":[{"IS":{"rooms_shortname":"AN*"}},{"NOT":{"IS":{"rooms_furniture":"*Fixed Tables*"}}},{"IS":{"rooms_type":"Small Group"}},{"LT":{"rooms_lon":-125.25468}},{"EQ":{"rooms_lat":49.2699}},{"IS":{"rooms_type":"Case style"}},{"IS":{"rooms_type":"Tiered Large*"}}]}},"OPTIONS":{"COLUMNS":["rooms_furniture","rooms_lat","rooms_lon","rooms_name","rooms_number","rooms_shortname","rooms_type"]}},
+    "R30_Beequicksilver":   {"WHERE":{"IS":{"rooms_shortname":"*NGU"}},"OPTIONS":{"COLUMNS":["rooms_address","rooms_fullname","rooms_furniture","rooms_href","rooms_lat","rooms_lon","rooms_name","rooms_number","rooms_seats","rooms_shortname","rooms_type"],"ORDER":{"dir":"DOWN","keys":["rooms_address","rooms_fullname","rooms_furniture","rooms_href","rooms_lat","rooms_lon","rooms_name","rooms_number","rooms_seats","rooms_shortname","rooms_type"]}}},
+    "R30_Beequicksilver2":  {"WHERE":{"AND":[{"GT":{"courses_avg":90}},{"NOT":{"IS":{"courses_dept":"cpsc"}}},{"LT":{"courses_audit":10}},{"EQ":{"courses_pass":9}},{"IS":{"courses_title":"mult des anal rs"}}]},"OPTIONS":{"COLUMNS":["courses_audit","courses_avg","courses_dept","courses_fail","courses_id","courses_instructor","courses_pass","courses_title","courses_uuid","courses_year"],"ORDER":{"dir":"DOWN","keys":["courses_audit","courses_avg","courses_dept","courses_fail","courses_id","courses_instructor","courses_pass","courses_title","courses_uuid","courses_year"]}}},
+    "singleNotCase": {"WHERE":{"NOT":{"LT":{"courses_avg":99}}},"OPTIONS":{"COLUMNS":["courses_avg"]}},
+    "emptyWhere": {}
+}

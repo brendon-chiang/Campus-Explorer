@@ -1,0 +1,14 @@
+{
+    "query1": "simple query IS comparison for department with two columns and old order syntax",
+    "GT99andNOTEQ99.19": "AND query that gets average greater than 99 and not equal 99.19 returning 1 avg column",
+    "dylanQuery": "DEPT CPSC, AVG GT 70, two columns with transformation of overallAvg",
+    "rebeccaqueryD3": "Im getting lazy",
+    "roomsR29Test": "Rooms with AND GT and IS. Few columns...does stuff",
+    "R25_Beeboron": "Should be able to build a query with AND of SComparison and MComparison",
+    "R25_Beeboron2": "Should be able to build a complex query with AND of SComparison and MComparison",
+    "R25_Beeboron3": "Should be able to build a hella complex query with AND of SComparison and MComparison",
+    "R30_Beequicksilver": "Should be able to build a query asking for all items",
+    "R30_Beequicksilver2": "Should be able to build a query asking for all courses items",
+    "singleNotCase": "Single NOT case",
+    "emptyWhere": "Empty where case should return all"
+}
